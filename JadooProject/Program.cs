@@ -1,7 +1,7 @@
 using JadooProject.DataAccess.Abstract;
 using JadooProject.DataAccess.Context;
 using JadooProject.DataAccess.Repositories;
-using JadooProject.Features.CQRS.Handlers;
+using JadooProject.Features.CQRS.Handlers.DestinationHandlers;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +16,11 @@ builder.Services.AddScoped<GetDestinationByIdQueryHandler>();
 builder.Services.AddScoped<CreateDestinationCommandHandler>();
 builder.Services.AddScoped<RemoveDestinationCommandHandler>();
 builder.Services.AddScoped<UpdateDestinationCommandHandler>();
+
+builder.Services.AddMediatR(cfg =>
+{
+    cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+});
 
 
 

@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using JadooProject.DataAccess.Abstract;
 using JadooProject.DataAccess.Entites;
-using JadooProject.Features.CQRS.Commands;
+using JadooProject.Features.CQRS.Commands.DestinationCommands;
 
-namespace JadooProject.Features.CQRS.Handlers
+namespace JadooProject.Features.CQRS.Handlers.DestinationHandlers
 {
     public class UpdateDestinationCommandHandler
     {

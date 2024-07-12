@@ -1,4 +1,4 @@
-﻿namespace JadooProject.Features.CQRS.Queries
+﻿namespace JadooProject.Features.CQRS.Queries.DestinationQueries
 {
     public class GetDestinationByIdQuery
     {

@@ -1,6 +1,7 @@
-﻿using JadooProject.Features.CQRS.Commands;
-using JadooProject.Features.CQRS.Handlers;
+﻿using JadooProject.Features.CQRS.Commands.DestinationCommands;
+using JadooProject.Features.CQRS.Handlers.DestinationHandlers;
 using JadooProject.Features.CQRS.Queries;
+using JadooProject.Features.CQRS.Queries.DestinationQueries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JadooProject.Areas.Admin.Controllers

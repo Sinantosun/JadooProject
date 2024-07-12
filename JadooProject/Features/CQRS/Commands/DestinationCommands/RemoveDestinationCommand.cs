@@ -1,4 +1,4 @@
-﻿namespace JadooProject.Features.CQRS.Commands
+﻿namespace JadooProject.Features.CQRS.Commands.DestinationCommands
 {
     public class RemoveDestinationCommand
     {

@@ -1,7 +1,8 @@
-﻿namespace JadooProject.Features.CQRS.Commands
+﻿namespace JadooProject.Features.CQRS.Commands.DestinationCommands
 {
-    public class CreateDestinationCommand
+    public class UpdateDestinationCommand
     {
+        public int DestinationId { get; set; }
         public string ImageURL { get; set; }
         public string City { get; set; }
         public string Duration { get; set; }

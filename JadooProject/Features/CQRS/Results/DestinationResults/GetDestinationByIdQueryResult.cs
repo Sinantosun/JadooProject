@@ -1,6 +1,6 @@
-﻿namespace JadooProject.Features.CQRS.Commands
+﻿namespace JadooProject.Features.CQRS.Results.DestinationResults
 {
-    public class UpdateDestinationCommand
+    public class GetDestinationByIdQueryResult
     {
         public int DestinationId { get; set; }
         public string ImageURL { get; set; }

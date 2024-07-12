@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using JadooProject.DataAccess.Abstract;
 using JadooProject.DataAccess.Entites;
-using JadooProject.Features.CQRS.Queries;
-using JadooProject.Features.CQRS.Results;
+using JadooProject.Features.CQRS.Queries.DestinationQueries;
+using JadooProject.Features.CQRS.Results.DestinationResults;
 
-namespace JadooProject.Features.CQRS.Handlers
+namespace JadooProject.Features.CQRS.Handlers.DestinationHandlers
 {
     public class GetDestinationByIdQueryHandler
     {
