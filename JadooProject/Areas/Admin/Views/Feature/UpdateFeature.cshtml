@@ -1,0 +1,32 @@
+﻿
+@model UpdateFeatureCommand
+@{
+    ViewData["Title"] = "UpdateFeature";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+<title>UpdateDestination</title>
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <form method="post">
+        <input type="hidden" asp-for="FeatureID" class="form-control" />
+        <label>Üst Açıklama</label>
+        <input type="text" asp-for="TopDescription" class="form-control" />
+        <br />
+        <label>Orta Açıklama</label>
+        <input type="text" asp-for="MidDescription" class="form-control" />
+        <br />
+        <label>Alt Açıklama</label>
+        <input type="text" asp-for="BottomDescription" class="form-control" />
+        <br />
+        <label>Resim</label>
+        <input type="text" asp-for="ImageURL" class="form-control" />
+        <br />
+        <input type="submit" class="btn btn-outline-primary" value="Güncelle" />
+
+    </form>
+</div>
+
+

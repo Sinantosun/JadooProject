@@ -49,6 +49,35 @@ namespace JadooProject.Migrations
                     b.ToTable("Destinations");
                 });
 
+            modelBuilder.Entity("JadooProject.DataAccess.Entites.Feature", b =>
+                {
+                    b.Property<int>("FeatureID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FeatureID"));
+
+                    b.Property<string>("BottomDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageURL")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MidDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TopDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("FeatureID");
+
+                    b.ToTable("Features");
+                });
+
             modelBuilder.Entity("JadooProject.DataAccess.Entites.Service", b =>
                 {
                     b.Property<int>("ServiceID")

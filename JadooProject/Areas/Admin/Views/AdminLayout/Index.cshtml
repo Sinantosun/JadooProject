@@ -4,13 +4,20 @@
 }
 
 <!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
+<html lang="tr">
+@await Component.InvokeAsync("_AdminHeadComponentPartial")
 <body>
-    @RenderBody()
+    <div class="wrapper">
+
+        @await Component.InvokeAsync("_AdminSideBarComponentPartial")
+        @await Component.InvokeAsync("_AdminHeaderComponentPartial")
+        <div class="container">
+            <div class="page-inner">
+                <div class="page-category">@RenderBody()</div>
+            </div>
+        </div>
+        @await Component.InvokeAsync("_AdminFooterComponentPartial")
+    </div>
+    @await Component.InvokeAsync("_AdminScriptsComponentPartial")
 </body>
 </html>

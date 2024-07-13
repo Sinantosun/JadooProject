@@ -1,45 +1,41 @@
-﻿
-@model List<GetDestinationQueryResult>
+﻿@model List<GetDestinationQueryResult>
 @{
-    Layout = null;
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
     int count = 0;
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
 
-    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<title>Index</title>
 
-</head>
-<body>
-    <div class="container mt-4">
-        <table class="table table-bordered">
-            <tr>
-                <th>#</th>
-                <th>Şehir</th>
-                <th>Tur Süresi</th>
-                <th>Fiyat</th>
-                <th colspan="2" class="text-center">İşlemler</th>
-            </tr>
-            @foreach (var item in Model)
-            {
-                count++;
-                <tr>
-                    <th>@count</th>
-                    <td>@item.City</td>
-                    <td>@item.Duration</td>
-                    <td>@item.Price.ToString("N0") ₺</td>
-                    <td><a href="/Admin/Destination/DeleteDestination/@item.DestinationId" class="btn btn-outline-danger">Sil</a></td>
-                    <td><a href="/Admin/Destination/UpdateDestination/@item.DestinationId" class="btn btn-outline-success">Güncelle</a></td>
-                </tr>
-            }
-        </table>
-        <br />
-        <a href="/Admin/Destination/CreateDestination" class="btn btn-outline-primary">Rota Oluştur</a>
-    </div>
-</body>
-</html>
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+
+<div class="container mt-4">
+    <h4>Rota Listesi</h4>
+    <br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Şehir</th>
+        <th>Tur Süresi</th>
+        <th>Fiyat</th>
+        <th colspan="2" class="text-center">İşlemler</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.City</td>
+            <td>@item.Duration</td>
+            <td>@item.Price.ToString("N0") ₺</td>
+            <td><a href="/Admin/Destination/DeleteDestination/@item.DestinationId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Admin/Destination/UpdateDestination/@item.DestinationId" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Admin/Destination/CreateDestination" class="btn btn-outline-primary">Rota Oluştur</a>
+
+            </div>

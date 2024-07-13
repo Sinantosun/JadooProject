@@ -12,5 +12,6 @@ namespace JadooProject.DataAccess.Context
 
         public DbSet<Service> Services { get; set; }
         public DbSet<Destination> Destinations { get; set; }
+        public DbSet<Feature> Features { get; set; }
     }
 }
