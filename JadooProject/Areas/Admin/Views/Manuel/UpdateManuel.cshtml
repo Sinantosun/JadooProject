@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "UpdateManuel";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+@model GetManuelByIdQueryResult
+@{
+    ViewData["Title"] = "CreateManuel";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<title>UpdateDestination</title>
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <form method="post">
+        <input type="hidden" asp-for="ManuelID" class="form-control" />
+        <label>Başlık</label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+        <label>Açıklama</label>
+        <input type="text" asp-for="Description" class="form-control" />
+        <br />
+        <label>İkon</label>
+        <input type="text" asp-for="Icon" class="form-control" />
+        <br />
+
+
+        <input type="submit" class="btn btn-outline-primary" value="Güncelle" />
+
+    </form>
+</div>
+
+
+
+
+
+
+
+

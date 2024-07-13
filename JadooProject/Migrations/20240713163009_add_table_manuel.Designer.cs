@@ -3,6 +3,7 @@ using JadooProject.DataAccess.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JadooProject.Migrations
 {
     [DbContext(typeof(JadooContext))]
-    partial class JadooContextModelSnapshot : ModelSnapshot
+    [Migration("20240713163009_add_table_manuel")]
+    partial class add_table_manuel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -126,35 +129,6 @@ namespace JadooProject.Migrations
                     b.HasKey("ServiceID");
 
                     b.ToTable("Services");
-                });
-
-            modelBuilder.Entity("JadooProject.DataAccess.Entites.Testimonail", b =>
-                {
-                    b.Property<int>("TestimonailID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TestimonailID"));
-
-                    b.Property<string>("Comment")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageURL")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NameSurname")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("TestimonailID");
-
-                    b.ToTable("Testimonails");
                 });
 #pragma warning restore 612, 618
         }

@@ -4,36 +4,44 @@
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
     int count = 0;
 }
-<title>Index</title>
 
-<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Öne Çıkan Listesi</div>
+        </div>
+        <div class="card-body">
 
-<div class="container mt-4">
-    <h4>Öne Çıkan Listesi</h4>
-    <br />
-    <table class="table table-bordered">
-        <tr>
-            <th>#</th>
-            <th>Üst Açıklama</th>
-            <th>Orta Açıklama</th>
-            <th>Alt Açıklama</th>
-            <th colspan="2" class="text-center">İşlemler</th>
-        </tr>
-        @foreach (var item in Model)
-        {
-            count++;
-            <tr>
-                <th>@count</th>
-                <td>@item.TopDescription</td>
-                <td>@item.MidDescription</td>
-                <td>@item.BottomDescription</td>
-                <td><a href="/Admin/Feature/DeleteFeature/@item.FeatureID" class="btn btn-outline-danger">Sil</a></td>
-                <td><a href="/Admin/Feature/UpdateFeature/@item.FeatureID" class="btn btn-outline-success">Güncelle</a></td>
-            </tr>
-        }
-    </table>
-    <br />
-    <a href="/Admin/Feature/CreateFeature" class="btn btn-outline-primary">Öne Çıkan Ekle</a>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Üst Açıklama</th>
+                        <th>Orta Açıklama</th>
+                        <th>Alt Açıklama</th>
+                        <th colspan="2" class="text-center">İşlemler</th>
+                    </tr>
+                </thead>
 
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <th>@count</th>
+                            <td>@item.TopDescription</td>
+                            <td>@item.MidDescription</td>
+                            <td>@item.BottomDescription</td>
+                            <td><a href="/Admin/Feature/DeleteFeature/@item.FeatureID" class="btn btn-outline-danger">Sil</a></td>
+                            <td><a href="/Admin/Feature/UpdateFeature/@item.FeatureID" class="btn btn-outline-success">Güncelle</a></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            <br />
+            <a href="/Admin/Feature/CreateFeature" class="btn btn-outline-primary">Öne Çıkan Ekle</a>
+        </div>
+    </div>
 </div>
 

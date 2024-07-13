@@ -1,15 +1,15 @@
-﻿@model List<GetServiceQueryResult>
+﻿
+@model List<GetManuelQueryResult>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
     int count = 0;
 }
 
-
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <div class="card-title"> Hizmetler Alanı</div>
+            <div class="card-title">Rezarvasyon Adımlar Alanı</div>
         </div>
         <div class="card-body">
 
@@ -33,15 +33,20 @@
                             <td>@item.Title</td>
                             <td>@item.Description</td>
                             <td>@item.Icon</td>
-                            <td><a href="/Admin/Service/DeleteService/@item.ServiceID" class="btn btn-outline-danger">Sil</a></td>
-                            <td><a href="/Admin/Service/UpdateService/@item.ServiceID" class="btn btn-outline-success">Güncelle</a></td>
+                            <td><a href="/Admin/Manuel/DeleteManuel/@item.ManuelID" class="btn btn-outline-danger">Sil</a></td>
+                            <td><a href="/Admin/Manuel/UpdateManuel/@item.ManuelID" class="btn btn-outline-success">Güncelle</a></td>
                         </tr>
                     }
 
                 </tbody>
             </table>
             <br />
-            <a href="/Admin/Service/CreateService" class="btn btn-outline-primary">Hizmet Ekle</a>
+            <a href="/Admin/Manuel/CreateManuel" class="btn btn-outline-primary">Yeni Alan Ekle</a>
         </div>
     </div>
 </div>
+
+
+
+
+

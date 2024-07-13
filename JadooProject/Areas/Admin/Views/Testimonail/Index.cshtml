@@ -1,4 +1,5 @@
-﻿@model List<GetServiceQueryResult>
+﻿@model List<GetTestimonailQueryResult>
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
@@ -9,7 +10,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <div class="card-title"> Hizmetler Alanı</div>
+            <div class="card-title"> Referanslar Alanı</div>
         </div>
         <div class="card-body">
 
@@ -17,9 +18,9 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Başlık</th>
-                        <th>Açıklama</th>
-                        <th>Ikon</th>
+                        <th>Görsel</th>
+                        <th>Ad Soyad</th>
+                        <th>Yorum</th>
                         <th colspan="2" class="text-center">İşlemler</th>
                     </tr>
                 </thead>
@@ -30,18 +31,20 @@
                         count++;
                         <tr>
                             <th>@count</th>
-                            <td>@item.Title</td>
-                            <td>@item.Description</td>
-                            <td>@item.Icon</td>
-                            <td><a href="/Admin/Service/DeleteService/@item.ServiceID" class="btn btn-outline-danger">Sil</a></td>
-                            <td><a href="/Admin/Service/UpdateService/@item.ServiceID" class="btn btn-outline-success">Güncelle</a></td>
+                            <td>@item.ImageURL</td>
+                            <td>@item.NameSurname</td>
+                            <td>@item.Comment</td>
+                            <td><a href="/Admin/Testimonail/DeleteTestimonail/@item.TestimonailID" class="btn btn-outline-danger">Sil</a></td>
+                            <td><a href="/Admin/Testimonail/UpdateTestimonail/@item.TestimonailID" class="btn btn-outline-success">Güncelle</a></td>
                         </tr>
                     }
 
                 </tbody>
             </table>
             <br />
-            <a href="/Admin/Service/CreateService" class="btn btn-outline-primary">Hizmet Ekle</a>
+            <a href="/Admin/Testimonail/CreateTestimonail" class="btn btn-outline-primary"> Referans Ekle</a>
         </div>
     </div>
 </div>
+
+
