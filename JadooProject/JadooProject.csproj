@@ -25,6 +25,8 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Features\Mediator\Commands\BrandCommands\" />
+    <Folder Include="Features\Mediator\Commands\TestimonialCommands\" />
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 

@@ -19,7 +19,7 @@
                         <th>#</th>
                         <th>Başlık</th>
                         <th>Açıklama</th>
-                        <th>Ikon</th>
+                        <th>Görsel</th>
                         <th colspan="2" class="text-center">İşlemler</th>
                     </tr>
                 </thead>
@@ -32,7 +32,7 @@
                             <th>@count</th>
                             <td>@item.Title</td>
                             <td>@item.Description</td>
-                            <td>@item.Icon</td>
+                            <td><img src="@item.Icon"   /></td>
                             <td><a href="/Admin/Service/DeleteService/@item.ServiceID" class="btn btn-outline-danger">Sil</a></td>
                             <td><a href="/Admin/Service/UpdateService/@item.ServiceID" class="btn btn-outline-success">Güncelle</a></td>
                         </tr>

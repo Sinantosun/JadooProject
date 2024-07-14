@@ -44,6 +44,7 @@ namespace JadooProject.Areas.Admin.Controllers
                 Duration = value.Duration,
                 ImageURL = value.ImageURL,
                 Price = value.Price,
+                Description=value.Description,
 
             };
 

@@ -7,18 +7,20 @@ namespace JadooProject.Features.CQRS.Handlers.DestinationHandlers
 {
     public class GetDestinationForDashboardQueryHandler
     {
-        private readonly IRepository<Destination> _repository;
+        private readonly IDestinationDal _destinationDal;
+
         private readonly IMapper _mapper;
 
-        public GetDestinationForDashboardQueryHandler(IRepository<Destination> repository, IMapper mapper)
+        public GetDestinationForDashboardQueryHandler(IMapper mapper, IDestinationDal destinationDal)
         {
-            _repository = repository;
+          
             _mapper = mapper;
+            _destinationDal = destinationDal;
         }
 
         public List<GetDestinationForDashboardQueryResult> Handle()
         {
-            var value = _repository.GetList();
+            var value = _destinationDal.GetLast6Destination();
             return _mapper.Map<List<GetDestinationForDashboardQueryResult>>(value);
 
         }

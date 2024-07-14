@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+
+@await Component.InvokeAsync("_UILayoutHeadComponentPartial")
+
+<body>
+
+    <main class="main" id="top">
+        @await Component.InvokeAsync("_UILayoutNavbarComponentPartial")
+        @RenderBody()
+
+        @await Component.InvokeAsync("_UILayoutFooterComponentPartial")
+
+        <div class="py-5 text-center">
+            <p class="mb-0 text-secondary fs--1 fw-medium">Tüm Hakları Saklıdır </p>
+        </div>
+    </main>
+    @await Component.InvokeAsync("UILayoutScriptsComponentPartial")
+
+</body>
+
+</html>

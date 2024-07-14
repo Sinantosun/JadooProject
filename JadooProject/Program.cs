@@ -10,7 +10,8 @@ using JadooProject.Features.CQRS.Handlers.FeatureHandlers;
 using JadooProject.Features.CQRS.Handlers.ManuelHandlers;
 using JadooProject.Features.CQRS.Handlers.NewsLetterHandlers;
 using JadooProject.Features.CQRS.Handlers.TestimonailHandlers;
-using JadooProject.Features.CQRS.Results.BrandResults;
+
+using JadooProject.Features.Mediator.Handlers.NewsLetterHandlers;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,11 +21,15 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddDbContext<JadooContext>();
 
-builder.Services.AddScoped<GetDestinationQueryHandler>();
+
 builder.Services.AddScoped<GetDestinationByIdQueryHandler>();
+builder.Services.AddScoped<GetDestinationQueryHandler>();
+builder.Services.AddScoped<GetDestinationForHomeQueryHandler>();
 builder.Services.AddScoped<CreateDestinationCommandHandler>();
 builder.Services.AddScoped<RemoveDestinationCommandHandler>();
+builder.Services.AddScoped<JadooProject.Features.Mediator.Handlers.DestinationHandlers.GetDestinationDetailQueryHandler>();
 builder.Services.AddScoped<UpdateDestinationCommandHandler>();
+builder.Services.AddScoped<GetLastDestinationQueryHandler>();
 builder.Services.AddScoped<GetDestinationForDashboardQueryHandler>();
 
 builder.Services.AddScoped<GetFeatureQueryHandler>();
@@ -43,6 +48,7 @@ builder.Services.AddScoped<GetTestimonailQueryHandler>();
 builder.Services.AddScoped<CreateTestimonailCommandHandler>();
 builder.Services.AddScoped<GetTestimonialByIdQueryHandler>();
 builder.Services.AddScoped<UpdateTestimonialCommandHandler>();
+builder.Services.AddScoped<GetTestimonailQueryHandler>();
 builder.Services.AddScoped<RemoveTestimonailCommandHandler>();
 builder.Services.AddScoped<GetTestimonailForDashboradQueryHandler>();
 
@@ -54,6 +60,7 @@ builder.Services.AddScoped<RemoveBrandCommandHandler>();
 
 builder.Services.AddScoped<GetNewsLetterQueryHandler>();
 builder.Services.AddScoped<UpdateNewsLetterCommandHandler>();
+builder.Services.AddScoped<CreateNewsLetterCommandHandler>();
 builder.Services.AddScoped<RemoveNewsLetterCommandHandler>();
 builder.Services.AddScoped<GetNewsLetterByIdQueryHandler>();
 

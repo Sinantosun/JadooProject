@@ -14,7 +14,10 @@ using JadooProject.Features.CQRS.Results.ManuelResults;
 using JadooProject.Features.CQRS.Results.NewsLetterResults;
 using JadooProject.Features.CQRS.Results.TestimonailResults;
 using JadooProject.Features.Mediator.Commands.ServiceCommands;
+using JadooProject.Features.Mediator.Results.BrandsResults;
+using JadooProject.Features.Mediator.Results.DestinationResults;
 using JadooProject.Features.Mediator.Results.ServiceResults;
+using JadooProject.Features.Mediator.Results.TestimonailResults;
 
 namespace JadooProject.Mapping
 {
@@ -25,7 +28,11 @@ namespace JadooProject.Mapping
             CreateMap<Destination, GetDestinationQueryResult>().ReverseMap();
             CreateMap<Destination, GetDestinationForDashboardQueryResult>().ReverseMap();
             CreateMap<Destination, GetDestinationByIdQueryResult>().ReverseMap();
+            CreateMap<Destination, GetDestinationForHomeQueryResult>().ReverseMap();
+            CreateMap<Destination, GetDestinationDetailQueryResult>().ReverseMap();
+            CreateMap<Destination, GetDestinationsQueryResult>().ReverseMap();
             CreateMap<Destination, CreateDestinationCommand>().ReverseMap();
+            CreateMap<Destination, GetLastDestinationQueryResult>().ReverseMap();
             CreateMap<Destination, UpdateDestinationCommand>().ReverseMap();
 
             CreateMap<Service, GetServiceQueryResult>().ReverseMap();
@@ -50,6 +57,7 @@ namespace JadooProject.Mapping
             CreateMap<UpdateManuelCommand, GetManuelByIdQueryResult>().ReverseMap();
 
             CreateMap<Testimonail, GetTestimonailQueryResult>().ReverseMap();
+            CreateMap<Testimonail, GetTestimonialQueryResult>().ReverseMap();
             CreateMap<Testimonail, CreateTestimonailCommand>().ReverseMap();
             CreateMap<Testimonail, GetTestimonailByIdQueryResult>().ReverseMap();
             CreateMap<Testimonail, UpdateTestimonialCommand>().ReverseMap();
@@ -58,6 +66,7 @@ namespace JadooProject.Mapping
 
 
             CreateMap<Brand, GetBrandQueryResult>().ReverseMap();
+            CreateMap<Brand, GetBrandsQueryResult>().ReverseMap();
             CreateMap<Brand, GetBrandByIdQueryResult>().ReverseMap();
             CreateMap<Brand, CreateBrandCommand>().ReverseMap();
             CreateMap<Brand, UpdateBrandCommand>().ReverseMap();

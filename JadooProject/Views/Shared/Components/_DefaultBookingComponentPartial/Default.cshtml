@@ -1,0 +1,44 @@
+﻿@model List<GetManuelQueryResult>
+@{
+    int count = 0;
+    string cssCard = "";
+}
+<section id="booking">
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="mb-4 text-start">
+                    <h5 class="text-secondary">Rota Oluşturma </h5>
+                    <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">3 Adımda Gezi Planlayın</h3>
+                </div>
+                @foreach (var item in Model)
+                {
+                    count++;
+                    if (count == 1)
+                    {
+                        cssCard = "primary";
+                    }
+                    else if (count==2)
+                    {
+                        cssCard = "info";
+                    }
+                    else
+                    {
+                        cssCard = "success";
+                    }
+                    <div class="d-flex align-items-start mb-5">
+                        <div class="bg-@cssCard me-sm-4 me-3 p-3" style="border-radius: 13px"> <img src="@item.Icon" width="22" alt="steps" /></div>
+                        <div class="flex-1">
+                            <h5 class="text-secondary fw-bold fs-0">@item.Title</h5>
+                            <p>@item.Description</p>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            @await Component.InvokeAsync("_DefaultLastDestinationComponentPartial")
+        </div>
+    </div>
+
+</section>

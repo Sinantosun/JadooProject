@@ -1,0 +1,59 @@
+﻿@model List<GetTestimonialQueryResult>
+@{
+    int count = 0;
+}
+<section id="testimonial">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="mb-8 text-start">
+                    <h5 class="text-secondary">Misafirlerimiz </h5>
+                    <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">Görüşleriniz bizim için çok kıymetli</h3>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-6">
+                <div class="pe-7 ps-5 ps-lg-0">
+                    <div class="carousel slide carousel-fade position-static" id="testimonialIndicator" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            @for (int i = 0; i < Model.Count; i++)
+                            {
+
+                                <button class="@(i==0?"active":"")" type="button" data-bs-target="#testimonialIndicator" data-bs-slide-to="@i" aria-current="true" aria-label="Testimonial @i"></button>
+                            }
+
+                            @*  <button class="false" type="button" data-bs-target="#testimonialIndicator" data-bs-slide-to="1" aria-current="true" aria-label="Testimonial 1"></button>
+                            <button class="false" type="button" data-bs-target="#testimonialIndicator" data-bs-slide-to="2" aria-current="true" aria-label="Testimonial 2"></button> *@
+                        </div>
+                        <div class="carousel-inner">
+                            @foreach (var item in Model)
+                            {
+                                count++;
+
+                                <div class="carousel-item position-relative @(count==1?"active":"")">
+                                    <div class="card shadow" style="border-radius:10px;">
+                                        <div class="position-absolute start-0 top-0 translate-middle"> <img class="rounded-circle fit-cover" src="@item.ImageURL" height="65" width="65" alt="" /></div>
+                                        <div class="card-body p-4">
+                                            <p class="fw-medium mb-4">&quot; @item.Comment &quot;</p>
+                                            <h5 class="text-secondary">@item.NameSurname</h5>
+                                            <p class="fw-medium fs--1 mb-0">@item.Country</p>
+                                        </div>
+                                    </div>
+                                    <div class="card shadow-sm position-absolute top-0 z-index--1 mb-3 w-100 h-100" style="border-radius:10px;transform:translate(25px, 25px)"> </div>
+                                </div>
+                            }
+
+
+                        </div>
+                        <div class="carousel-navigation d-flex flex-column flex-between-center position-absolute end-0 top-lg-50 bottom-0 translate-middle-y z-index-1 me-3 me-lg-0" style="height:60px;width:20px;">
+                            <button class="carousel-control-prev position-static" type="button" data-bs-target="#testimonialIndicator" data-bs-slide="prev"><img src="~/Templates/jadoo/public/assets/img/icons/up.svg" width="16" alt="icon" /></button>
+                            <button class="carousel-control-next position-static" type="button" data-bs-target="#testimonialIndicator" data-bs-slide="next"><img src="~/Templates/jadoo/public/assets/img/icons/down.svg" width="16" alt="icon" /></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

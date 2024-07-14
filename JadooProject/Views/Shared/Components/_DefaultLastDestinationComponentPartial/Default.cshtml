@@ -1,0 +1,19 @@
+﻿@model GetLastDestinationQueryResult
+<div class="col-lg-6 d-flex justify-content-center align-items-start">
+    <div class="card position-relative shadow" style="max-width: 370px;">
+        <div class="position-absolute z-index--1 me-10 me-xxl-0" style="right:-160px;top:-210px;"> <img src="~/Templates/jadoo/public/assets/img/steps/bg.png" style="max-width:550px;" alt="shape" /></div>
+        <div class="card-body p-3 text-center">
+            <img class="mb-4 mt-2 rounded-2 w-100" src="@Model.ImageURL" alt="booking" />
+            <div>
+                <h5 class="fw-medium">Son Eklene Rota</h5>
+          
+                <h5 class="fw-medium"> @Model.City</h5>
+                <p class="fs--1 mb-3 fw-medium">@Model.Duration</p>
+                <p class="fs--1 mb-3 fw-medium">@Model.Price.ToString("C2")</p>
+                
+                <a href="" class="btn btn-outline-info"> <i class="fa fa-search"></i> Detay</a>
+             
+            </div>
+        </div>
+    </div>
+</div>
