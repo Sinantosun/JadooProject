@@ -1,36 +1,41 @@
-﻿
+﻿@model GetManuelByIdQueryResult
 @{
     ViewData["Title"] = "UpdateManuel";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
 
 
-@model GetManuelByIdQueryResult
-@{
-    ViewData["Title"] = "CreateManuel";
-    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
-}
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Rezarvasyon Adımı Güncelleme Sayfası</div>
+        </div>
 
-<title>UpdateDestination</title>
-<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <div class="card-body">
+            <div class="row">
+                <div class="container">
+                    <div class="form-group">
+                        <form method="post">
+                            <input type="hidden" asp-for="ManuelID" class="form-control" />
+                            <label>Başlık</label>
+                            <input type="text" asp-for="Title" class="form-control" />
+                            <br />
+                            <label>Açıklama</label>
+                            <input type="text" asp-for="Description" class="form-control" />
+                            <br />
+                            <label>İkon</label>
+                            <input type="text" asp-for="Icon" class="form-control" />
+                            <br />
 
-<div class="container">
-    <form method="post">
-        <input type="hidden" asp-for="ManuelID" class="form-control" />
-        <label>Başlık</label>
-        <input type="text" asp-for="Title" class="form-control" />
-        <br />
-        <label>Açıklama</label>
-        <input type="text" asp-for="Description" class="form-control" />
-        <br />
-        <label>İkon</label>
-        <input type="text" asp-for="Icon" class="form-control" />
-        <br />
 
+                            <input type="submit" class="btn btn-outline-primary" value="Güncelle" />
 
-        <input type="submit" class="btn btn-outline-primary" value="Güncelle" />
-
-    </form>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 

@@ -1,0 +1,41 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+@model UpdateTestimonialCommand
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Referans Güncelleme Sayfası</div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="container">
+                    <div class="form-group">
+                        <form method="post" enctype="multipart/form-data">
+                            <input type="hidden" asp-for="TestimonailID" class="form-control" />
+                            <label>Ad Soyad</label>
+                            <input type="text" asp-for="NameSurname" class="form-control" />
+                            <br />
+                            <label>Yorum</label>
+                            <input type="text" asp-for="Comment" class="form-control" />
+                            <br />
+                            <label>Ülke/Şehir</label>
+                            <input type="text" asp-for="Country" class="form-control" />
+                            <br />
+                            <label>Resim</label>
+                            <input type="file" asp-for="File" class="form-control" />
+                            <br />
+                            <input type="submit" class="btn btn-outline-primary" value="Güncelle" />
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

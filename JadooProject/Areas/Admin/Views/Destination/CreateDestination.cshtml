@@ -1,33 +1,36 @@
 ﻿@model CreateDestinationCommand
 @{
-    Layout = null;
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
-<!DOCTYPE html>
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Rota Ekleme Sayfası</div>
+        </div>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>UpdateDestination</title>
-    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body>
-    <div class="container">
-        <form method="post">
-            <label>Şehir</label>
-            <input type="text" asp-for="City" class="form-control" />
-            <br />
-            <label>Resim</label>
-            <input type="text" asp-for="ImageURL" class="form-control" />
-            <br />
-            <label>Fiyat</label>
-            <input type="text" asp-for="Price" class="form-control" />
-            <br />
-            <label>Tur Süresi</label>
-            <input type="text" asp-for="Duration" class="form-control" />
-            <br />
-            <input type="submit" class="btn btn-outline-primary" value="Güncelle" />
+        <div class="card-body">
+            <div class="row">
 
-        </form>
+                <div class="container">
+                    <div class="form-group">
+                        <form method="post" enctype="multipart/form-data">
+                            <label>Şehir</label>
+                            <input type="text" asp-for="City" class="form-control" />
+                            <br />
+                            <label>Resim</label>
+                            <input type="file" asp-for="File" class="form-control" />
+                            <br />
+                            <label>Fiyat</label>
+                            <input type="text" asp-for="Price" class="form-control" />
+                            <br />
+                            <label>Tur Süresi</label>
+                            <input type="text" asp-for="Duration" class="form-control" />
+                            <br />
+                            <input type="submit" class="btn btn-outline-primary" value="Ekle" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+</div>

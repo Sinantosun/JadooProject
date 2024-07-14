@@ -1,0 +1,38 @@
+﻿@model UpdateNewsLetterCommand
+@{
+    ViewData["Title"] = "UpdateNewsLetter";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Mail Abone Güncelleme Sayfası</div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="container">
+                    <div class="form-group">
+                        <form method="post">
+                            <input type="hidden" asp-for="NewsLetterID" class="form-control" />
+                            <label>Üst Açıklama</label>
+                            <input type="email" asp-for="Mail" required class="form-control" />
+                            <br />
+                            <input type="submit" class="btn btn-outline-primary" value="Güncelle" />
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

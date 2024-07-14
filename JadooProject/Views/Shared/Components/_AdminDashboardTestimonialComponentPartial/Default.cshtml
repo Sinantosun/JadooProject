@@ -1,0 +1,63 @@
+﻿@model List<GetTestimonailForDashboardQueryResult>
+
+<div class="col-md-4">
+    <div class="card card-round">
+        <div class="card-body">
+            <div class="card-head-row card-tools-still-right">
+                <div class="card-title">Referanslarımız</div>
+
+            </div>
+            <div class="card-list py-4">
+                @foreach (var item in Model)
+                {
+                    <div class="item-list">
+                        <div class="avatar">
+                            <img src="@item.ImageURL"
+                                 alt="..."
+                                 class="avatar-img rounded-circle" />
+                        </div>
+                        <div class="info-user ms-3">
+                            <div class="username">@item.NameSurname</div>
+                            <div class="status">@item.Country</div>
+                        </div>
+                        <a href="/Admin/Testimonail/UpdateTestimonail/@item.TestimonailID" class="btn btn-icon btn-link op-8 me-1">
+                            <i class="far fa-edit"></i>
+                        </a>
+                        <button onclick="DeleteDestination(@item.TestimonailID)" class="btn btn-icon btn-link btn-danger op-8">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function DeleteDestination(id){
+        swal({
+            title: "Emin Misiniz?",
+            text: "Referans Kayıdı Silinsin Mi?",
+            type: "warning",
+            buttons: {
+                confirm: {
+                    text: "Sil",
+                    className: "btn btn-success",
+                },
+                cancel: {
+                    text: "Vazgeç",
+                    visible: true,
+                    className: "btn btn-danger",
+                },
+            },
+        }).then((Delete) => {
+            if (Delete) {
+                window.location.href = '/Admin/Testimonail/DeleteTestimonail/'+ id;
+            } else {
+                swal.close();
+            }
+        });
+    }
+</script>

@@ -1,0 +1,44 @@
+﻿@model List<GetNewsLetterQueryResult>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Abone Bülteni</div>
+        </div>
+        <div class="card-body">
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Mail</th>
+                        <th colspan="2" class="text-center">İşlemler</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <th>@count</th>
+                            <td>@item.Mail</td>
+                            <td><a href="/Admin/NewsLetter/DeleteNewsLetter/@item.NewsLetterID" class="btn btn-outline-danger">Sil</a></td>
+                            <td><a href="/Admin/NewsLetter/UpdateNewsLetter/@item.NewsLetterID" class="btn btn-outline-success">Güncelle</a></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

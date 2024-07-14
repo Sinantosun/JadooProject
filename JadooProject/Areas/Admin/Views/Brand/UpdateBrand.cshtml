@@ -1,0 +1,41 @@
+﻿@model UpdateBrandCommand
+
+@{
+    ViewData["Title"] = "UpdateBrand";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Marka Güncelleme Sayfası</div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+
+                <div class="container">
+                    <div class="form-group">
+                        <form method="post" enctype="multipart/form-data">
+                            <input type="hidden" asp-for="BrandID" class="form-control" />
+                            <label>Görsel</label>
+                            <input type="file" asp-for="File" class="form-control" />
+                            <br />
+                            <input type="submit" class="btn btn-outline-primary" value="Güncelle" />
+
+                        </form>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

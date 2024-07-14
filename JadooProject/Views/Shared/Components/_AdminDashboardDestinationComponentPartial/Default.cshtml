@@ -1,0 +1,46 @@
+﻿@model List<GetDestinationForDashboardQueryResult>
+@{
+    int count = 0;
+}
+<div class="col-md-8">
+    <div class="card card-round">
+        <div class="card-header">
+            <div class="card-head-row card-tools-still-right">
+                <div class="card-title">Rotalar</div>
+
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <!-- Projects table -->
+                <table class="table align-items-center mb-0">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col" >#</th>
+                            <th scope="col" class="text-end">Lokasyon</th>
+                            <th scope="col" class="text-end">Süre</th>
+                            <th scope="col" class="text-end">Fiyat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            count++;
+                            <tr>
+                                <th  scope="row">
+                                    @count
+                                </th>
+                                <td class="text-end">@item.City</td>
+                                <td class="text-end">@item.Duration</td>
+                                <td class="text-end">@item.Price.ToString("C2")</td>
+                             
+                            </tr>
+                        }
+                   
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

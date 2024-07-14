@@ -21,6 +21,23 @@ namespace JadooProject.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("JadooProject.DataAccess.Entites.Brand", b =>
+                {
+                    b.Property<int>("BrandID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BrandID"));
+
+                    b.Property<string>("ImageURL")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("BrandID");
+
+                    b.ToTable("Brands");
+                });
+
             modelBuilder.Entity("JadooProject.DataAccess.Entites.Destination", b =>
                 {
                     b.Property<int>("DestinationId")
@@ -101,6 +118,23 @@ namespace JadooProject.Migrations
                     b.HasKey("ManuelID");
 
                     b.ToTable("Manuels");
+                });
+
+            modelBuilder.Entity("JadooProject.DataAccess.Entites.NewsLetter", b =>
+                {
+                    b.Property<int>("NewsLetterID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NewsLetterID"));
+
+                    b.Property<string>("Mail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("NewsLetterID");
+
+                    b.ToTable("NewsLetters");
                 });
 
             modelBuilder.Entity("JadooProject.DataAccess.Entites.Service", b =>

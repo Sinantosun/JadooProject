@@ -2,6 +2,7 @@
 using JadooProject.Features.CQRS.Handlers.DestinationHandlers;
 using JadooProject.Features.CQRS.Queries;
 using JadooProject.Features.CQRS.Queries.DestinationQueries;
+using JadooProject.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JadooProject.Areas.Admin.Controllers
@@ -54,6 +55,11 @@ namespace JadooProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult UpdateDestination(UpdateDestinationCommand command)
         {
+            if (command.File != null)
+            {
+                string image = ImageViewModel.CreateImage(command.File);
+                command.ImageURL = image;
+            }
             _updateDestinationCommandHandler.Handle(command);
             return RedirectToAction("Index");
         }
@@ -68,6 +74,8 @@ namespace JadooProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult CreateDestination(CreateDestinationCommand command)
         {
+            var image = ImageViewModel.CreateImage(command.File);
+            command.ImageURL = image;
             _createDestinationCommandHandler.Handle(command);
             return RedirectToAction("Index");
         }

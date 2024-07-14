@@ -15,6 +15,7 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Görsel</th>
                         <th>Şehir</th>
                         <th>Tur Süresi</th>
                         <th>Fiyat</th>
@@ -28,6 +29,7 @@
                         count++;
                         <tr>
                             <th>@count</th>
+                            <td><img src="@item.ImageURL" style="width:250px;height:250px" /></td>
                             <td>@item.City</td>
                             <td>@item.Duration</td>
                             <td>@item.Price.ToString("N0") ₺</td>

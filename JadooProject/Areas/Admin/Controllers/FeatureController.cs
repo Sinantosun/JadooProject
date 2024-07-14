@@ -2,6 +2,7 @@
 using JadooProject.Features.CQRS.Commands.FeatureCommands;
 using JadooProject.Features.CQRS.Handlers.FeatureHandlers;
 using JadooProject.Features.CQRS.Queries.FeatureQueries;
+using JadooProject.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JadooProject.Areas.Admin.Controllers
@@ -43,6 +44,8 @@ namespace JadooProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult UpdateFeature(UpdateFeatureCommand command)
         {
+            string image = ImageViewModel.CreateImage(command.File);
+            command.ImageURL = image;
             _updateFeatureCommandHandler.Handle(command);
             return RedirectToAction("Index");
         }
@@ -65,6 +68,8 @@ namespace JadooProject.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult CreateFeature(CreateFeatureCommand command)
         {
+            string image = ImageViewModel.CreateImage(command.File);
+            command.ImageURL = image;
             _createFeatureCommandHandler.Handle(command);
             return RedirectToAction("Index");
         }

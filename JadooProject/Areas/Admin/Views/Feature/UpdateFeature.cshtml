@@ -4,29 +4,36 @@
     ViewData["Title"] = "UpdateFeature";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Öne Çıkan Güncelleme Sayfası</div>
+        </div>
 
+        <div class="card-body">
+            <div class="row">
+                <div class="container">
+                    <div class="form-group">
+                        <form method="post" enctype="multipart/form-data">
+                            <input type="hidden" asp-for="FeatureID" class="form-control" />
+                            <label>Üst Açıklama</label>
+                            <input type="text" asp-for="TopDescription" class="form-control" />
+                            <br />
+                            <label>Orta Açıklama</label>
+                            <input type="text" asp-for="MidDescription" class="form-control" />
+                            <br />
+                            <label>Alt Açıklama</label>
+                            <input type="text" asp-for="BottomDescription" class="form-control" />
+                            <br />
+                            <label>Resim</label>
+                            <input type="file" asp-for="File" class="form-control" />
+                            <br />
+                            <input type="submit" class="btn btn-outline-primary" value="Güncelle" />
 
-<title>UpdateDestination</title>
-<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-<div class="container">
-    <form method="post">
-        <input type="hidden" asp-for="FeatureID" class="form-control" />
-        <label>Üst Açıklama</label>
-        <input type="text" asp-for="TopDescription" class="form-control" />
-        <br />
-        <label>Orta Açıklama</label>
-        <input type="text" asp-for="MidDescription" class="form-control" />
-        <br />
-        <label>Alt Açıklama</label>
-        <input type="text" asp-for="BottomDescription" class="form-control" />
-        <br />
-        <label>Resim</label>
-        <input type="text" asp-for="ImageURL" class="form-control" />
-        <br />
-        <input type="submit" class="btn btn-outline-primary" value="Güncelle" />
-
-    </form>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-

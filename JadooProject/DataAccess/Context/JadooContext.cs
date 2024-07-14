@@ -15,5 +15,7 @@ namespace JadooProject.DataAccess.Context
         public DbSet<Feature> Features { get; set; }
         public DbSet<Manuel> Manuels { get; set; }
         public DbSet<Testimonail> Testimonails { get; set; }
+        public DbSet<Brand> Brands { get; set; }
+        public DbSet<NewsLetter> NewsLetters { get; set; }
     }
 }
