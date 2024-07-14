@@ -1,4 +1,4 @@
-![Image08](https://github.com/user-attachments/assets/8d9a865e-5c15-4020-bb63-f3d44ff81022)![Image01](https://github.com/user-attachments/assets/439b9630-c9ff-43b9-800c-8f3157965180)-- Bu Projeyi CQRS Design Pattern ve MediatR kütüphanesini kullanarak Mediator Design ile geliştirdik
+-- Bu Projeyi CQRS Design Pattern ve MediatR kütüphanesini kullanarak Mediator Design ile geliştirdik
 
 📌 Rotaları Listeledik. <br>
 
